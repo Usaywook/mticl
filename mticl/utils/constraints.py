@@ -31,7 +31,7 @@ class Constraint(nn.Module):
         inputs = to_torch(trajs)
         with torch.no_grad():
             output = self.forward(inputs) if act else self.raw_forward(inputs)
-        return torch.Tensor.numpy(output, force=True)
+        return output.cpu().detach().numpy()
 
 
 class MazeConstraint(Constraint):
