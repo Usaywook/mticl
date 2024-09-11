@@ -2,3 +2,10 @@
 .vscode/
 **/.DS_Store
 .**/
+experts
+learners
+mticl/plots/*
+mticl/demos/*
+mticl/*.txt
+mticl/*.npy
+mticl/*.npz

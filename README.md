@@ -8,7 +8,7 @@ If you found this repository useful in your research, please consider citing our
 
 ```bibtex
 @misc{kim2023learning,
-      title={Learning Shared Safety Constraints from Multi-task Demonstrations}, 
+      title={Learning Shared Safety Constraints from Multi-task Demonstrations},
       author={Konwoo Kim and Gokul Swamy and Zuxin Liu and Ding Zhao and Sanjiban Choudhury and Zhiwei Steven Wu},
       year={2023},
       eprint={2309.00711},
@@ -41,20 +41,34 @@ The high-level structure of this repository is as follows:
 > [!NOTE]
 > Please see [here](https://github.com/konwook/mticl/blob/main/mticl/README.md) for a detailed overview of the codebase.
 
-## Setup 
-### Installation 
+## Setup
+### Installation
 ```
 conda create -n mticl python=3.10.8
 conda activate mticl
 pip install -r requirements.txt
 export PYTHONPATH=mticl:$PYTHONPATH
+
+pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --
+extra-index-url https://download.pytorch.org/whl/cu113
+
+sentry-sdk               2.13.0 -> 1.28.1
+setuptools               72.1.0 -> 66.1.1
+
+pip install setuptools==66.1.1 sentry-sdk==1.28.1
+
+sudo apt-get install texlive-full
+or
+sudo apt-get install texlive-latex-base texlive-fonts-recommended texlive-latex-recommended texlive-fonts-extra dvipng cm-super
+sudo apt-get install texlive-fonts-extra
+
 ```
 > [!IMPORTANT]
-> All scripts should be run from under ```mticl/```. 
+> All scripts should be run from under ```mticl/```.
 
 ## Experiments
 
-Scripts for replicating results from the paper are provided under the ```experiments/``` directory. 
+Scripts for replicating results from the paper are provided under the ```experiments/``` directory.
 
 ### AntBulletEnv-v0 (Velocity / Position Constraint)
 ```
@@ -68,7 +82,7 @@ Scripts for replicating results from the paper are provided under the ```experim
 ./experiments/ant_maze.sh
 ```
 
-## Acknowledgements 
-The core `saferl/` code was developed from an early version of the [FSRL](https://github.com/liuzuxin/FSRL) repository which provides fast, high-quality implementations of safe RL algorithms. 
+## Acknowledgements
+The core `saferl/` code was developed from an early version of the [FSRL](https://github.com/liuzuxin/FSRL) repository which provides fast, high-quality implementations of safe RL algorithms.
 > [!WARNING]
 > This code is not fully compatible with the latest version of FSRL. See [here](https://github.com/konwook/mticl/blob/main/mticl/README.md) for more information.
